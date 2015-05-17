@@ -15,6 +15,13 @@ module.exports = (robot) ->
   cheerio = require 'cheerio'
 
   robot.respond /cookpad (.+)$/i, (res) ->
+    res.send res.random [
+      "ご飯の支度しないと、間宮とか近くにいないのかしら?",
+      "提督の好きなメニューのデータはぜぇーんぶ揃ってます!",
+      "今日はおいしいものを食べたいなぁ、天ぷら蕎麦とか！"
+    ]
+
+  robot.respond /cookpad (.+)$/i, (res) ->
     keyword = res.match[1]
     request
       url: "http://cookpad.com/search/#{encodeURIComponent(keyword)}"
@@ -37,9 +44,4 @@ module.exports = (robot) ->
           #{recipe.url}
           """
         .join '\n'
-      res.send res.random [
-        "ご飯の支度しないと、間宮とか近くにいないのかしら?",
-        "提督の好きなメニューのデータはぜぇーんぶ揃ってます!",
-        "今日はおいしいものを食べたいなぁ、天ぷら蕎麦とか！"
-      ]
       res.send messages
