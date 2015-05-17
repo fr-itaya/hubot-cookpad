@@ -32,9 +32,14 @@ module.exports = (robot) ->
           i < 3
         .map (recipe) ->
           """
-          #{recipe.img}\#.jpg
+          #{recipe.img}.jpg
           #{recipe.title}
           #{recipe.url}
           """
         .join '\n'
+      res.send.random [
+        "ご飯の支度しないと、間宮とか近くにいないのかしら?",
+        "提督の好きなメニューのデータはぜぇーんぶ揃ってます!",
+        "今日はおいしいものを食べたいなぁ、天ぷら蕎麦とか！"
+      ]
       res.send messages
