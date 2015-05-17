@@ -37,7 +37,7 @@ module.exports = (robot) ->
           #{recipe.url}
           """
         .join '\n'
-      res.send.random [
+      res.send msg.random [
         "ご飯の支度しないと、間宮とか近くにいないのかしら?",
         "提督の好きなメニューのデータはぜぇーんぶ揃ってます!",
         "今日はおいしいものを食べたいなぁ、天ぷら蕎麦とか！"
