@@ -14,7 +14,7 @@ module.exports = (robot) ->
   request = require 'request-b'
   cheerio = require 'cheerio'
 
-  robot.respond /cookpad (.+)$/i, (res) ->
+  robot.hear /cookpad (.+)$/i, (res) ->
     res.send res.random [
       "ご飯の支度しないと、間宮とか近くにいないのかしら?",
       "提督の好きなメニューのデータはぜぇーんぶ揃ってます!",
